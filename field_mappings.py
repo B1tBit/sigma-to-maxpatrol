@@ -1,0 +1,33 @@
+SIGMA_TO_MAXPATROL_MAPPING = {
+    "EventID": "event_src.code",
+    "Image": "process.file.path",
+    "CommandLine": "process.cmd_line",
+    "ProcessName": "process.name",
+    "ParentImage": "process.parent.file.path",
+    "ParentCommandLine": "process.parent.cmd_line",
+    "User": "subject.name",
+    "Computer": "src.hostname",
+    "TargetFilename": "file.path",
+    "SourceIp": "src.ip",
+    "DestinationIp": "dst.ip",
+    "SourcePort": "src.port",
+    "DestinationPort": "dst.port",
+    "ServiceName": "service.name",
+}
+
+TACTIC_TO_IMPORTANCE = {
+    "reconnaissance": "low",
+    "resource-development": "low",
+    "initial-access": "medium",
+    "execution": "medium",
+    "persistence": "high",
+    "privilege-escalation": "high",
+    "defense-evasion": "high",
+    "credential-access": "high",
+    "discovery": "medium",
+    "lateral-movement": "high",
+    "collection": "medium",
+    "command-and-control": "high",
+    "exfiltration": "high",
+    "impact": "high",
+}

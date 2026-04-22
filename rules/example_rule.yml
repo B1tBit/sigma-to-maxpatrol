@@ -1,0 +1,26 @@
+title: Suspicious PowerShell Execution
+id: 8f5a6b7c-8d9e-4f0a-1b2c-3d4e5f6a7b8c
+status: stable
+description: Detects suspicious PowerShell command line arguments
+author: Your Name
+date: 2024-01-01
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection:
+        Image|endswith: '\powershell.exe'
+        CommandLine|contains:
+            - '-enc'
+            - '-EncodedCommand'
+            - 'IEX'
+            - 'Invoke-Expression'
+    condition: selection
+falsepositives:
+    - Administrative scripts
+level: high
+tags:
+    - attack.execution
+    - attack.t1059.001
+references:
+    - https://attack.mitre.org/techniques/T1059/001/
