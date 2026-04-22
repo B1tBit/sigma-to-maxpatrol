@@ -22,3 +22,8 @@ git clone https://github.com/B1tBit/sigma-to-maxpatrol.git
 cd sigma-to-maxpatrol
 pip install -r requirements.txt
 ```
+
+## ⚙️ Пример использования
+```bash
+python converter.py rules/example_rule.yml -o output/example_rule.krl
+```
